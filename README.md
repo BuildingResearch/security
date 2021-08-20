@@ -16,7 +16,7 @@ main.m
 ```
 
 
-Open DOS or FDI simulink block diagram and inside pick:
+Open DOS or FDI simulink block diagram and pick:
 ```
 Build model
 Connect and run
