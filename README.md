@@ -5,6 +5,5 @@ This repository contains the files required to simulate the attacks against stru
 Requirements
 =====
 
-To run the files inside this respository, it is required Matlab 2021a.
+It is required Matlab 2021A to run simulations.
 
-=====
