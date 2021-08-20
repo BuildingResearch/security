@@ -4,7 +4,7 @@ This repository contains the files required to simulate attacks against structur
 
 ## Requirements
 
-Matlab 2021A is required to run simulations. For the Quanser system it is additionally needed Quarc Real-Time Control Software.
+Matlab 2016A is required to run simulations. For the Quanser system it is additionally needed Quarc Real-Time Control Software.
 
 
 
