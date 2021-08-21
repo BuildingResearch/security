@@ -5,7 +5,7 @@ This repository contains the files required to simulate the attacks against stru
 Requirements
 =====
 
-It is required Matlab 2019A to run simulations. The Quanser system needsQuarc Real-Time Control Software, and the systems *Shake Table II: Bench-scale single-axis motion simulator* and two *Active Mass Damper: Bench-scale smart structure*.
+It is required Matlab 2019A to run simulations. The Quanser Quanser Shake Table needs Quarc Real-Time Control Software, and the systems *Shake Table II: Bench-scale single-axis motion simulator* and two *Active Mass Damper: Bench-scale smart structure*.
 
 
 
