@@ -5,7 +5,7 @@ This repository contains the files required to simulate the attacks against stru
 Requirements
 =====
 
-It is required Matlab 2019A to run simulations. The Quanser testbed requires Quarc Real-Time Control Software, and the systems *Shake Table II: Bench-scale single-axis motion simulator* and two *Active Mass Damper: Bench-scale smart structure*.
+It is required Matlab 2019A to run simulations. The Quanser system needsQuarc Real-Time Control Software, and the systems *Shake Table II: Bench-scale single-axis motion simulator* and two *Active Mass Damper: Bench-scale smart structure*.
 
 
 
@@ -25,4 +25,4 @@ Connect and run
 
 ## Benchmarks
 
-We have retrieved the benchmarks 3, 13 and 14 from https://datacenterhub.org/dataviewer/view/neesdatabases:db/structural_control_and_monitoring_benchmark_problems/
+We used bechmarks 3, 13 and 14 from https://datacenterhub.org/dataviewer/view/neesdatabases:db/structural_control_and_monitoring_benchmark_problems/
