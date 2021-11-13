@@ -5,8 +5,12 @@ This repository contains the files required to simulate the attacks against stru
 Requirements
 =====
 
-It is required Matlab 2019A to run simulations. The Quanser Quanser Shake Table needs Quarc Real-Time Control Software, and the systems *Shake Table II: Bench-scale single-axis motion simulator* and two *Active Mass Damper: Bench-scale smart structure*.
+It is required Matlab 2020B to run simulations. The Quanser Quanser Shake Table needs Quarc Real-Time Control Software, and the systems *Shake Table II: Bench-scale single-axis motion simulator* and two *Active Mass Damper: Bench-scale smart structure*.
 
+To run the simulations, the following toolboxes are required:
+- Parallel toolbox
+- Global optimization toolbox
+- Control system toolbox
 
 
 ## Setting up the experiment
@@ -23,6 +27,15 @@ Build model
 Connect and run
 ```
 
+We present a video of our simulation results [here](https://youtu.be/vM_n1t92NJg).
+
+## Simulation results
+
+There is a folder for every benchmark and anomaly detection with a '''main''' file. Go to the path of the benchmark in Matlab and then run
+'''
+main
+'''
+
 ## Benchmarks
 
-We used bechmarks 3, 13 and 14 from https://datacenterhub.org/dataviewer/view/neesdatabases:db/structural_control_and_monitoring_benchmark_problems/
+We used bechmarks 3, 13 and 14 from [here](https://datacenterhub.org/dataviewer/view/neesdatabases:db/structural_control_and_monitoring_benchmark_problems/)
