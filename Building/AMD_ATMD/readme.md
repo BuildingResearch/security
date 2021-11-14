@@ -1,6 +1,3 @@
-This file presents the instructions to simulate both the DoS and FDI attacks on the 20 story building with AMD and ATMD.
-Matlab from 2021a or newer is required for this operation. The Control system toolbox is needed to run these simulations
-
 DoS attacks:
 1. Clear the workspace by typing "clear all" in the command Window.
 2. From the "B20_AMD_main.m" file, change the parameters needed. The FDIon variable should be set to 0. The Ecase variable

@@ -29,12 +29,9 @@ Connect and run
 
 We present a video of our simulation results [here](https://youtu.be/vM_n1t92NJg).
 
-## Simulation results
+## Simulations
 
-There is a folder for every benchmark and anomaly detection with a ```main``` file. Go to the path of the benchmark in Matlab and then run
-```
-main
-```
+There is a folder for the simulation of every benchmark and anomaly detection.
 
 ## Benchmarks
 

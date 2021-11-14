@@ -1,9 +1,3 @@
-This file presents the instructions to simulate the DoS attacks on the 20 story building with MR dampers.
-Matlab from 2021a or newer is required for this operation. The following toolboxes are required:
-- Parallel toolbox
-- Global optimization toolbox
-- Control system toolbox
-
 The steps to run the simulation are the ones that follow:
 
 1. Modify the relevant parameters in the parameters section on the "B20_MR_DoS_design.m" script. Ecase sets the earthquake to be used, and EI sets the
