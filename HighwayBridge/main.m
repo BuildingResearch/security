@@ -47,7 +47,7 @@ eval('SYS_IO')
 [A,B,C,D]=SYS_HWB(Ms,Ks,Cs,b,I1,nloc);
 ctrl='DoS';
 eval('samp_MR');                    % Controller design
-Sim_model='HWbridge_S_DoS2019a';    % Simulink model
+Sim_model='HWbridge_S_DoS';    % Simulink model
 
 % Simulation
 dt_out = 0.02; 
