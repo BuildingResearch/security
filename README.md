@@ -2,6 +2,9 @@
 
 This repository contains the files required to simulate the attacks against structural control systems. It also contains Matlab/Simulink files required to run the experiments with the Quanser system. Each folder contains the specific files needed for every testbed and benchmark.
 
+Paper:
+A. Zambrano, A. P. Betancur, L. Burbano, A. F. Ni ̃no, L. F. Giraldo, M. G. Soto, J. Giraldo, and A. A. Cardenas, “You make me tremble: A first look at attacks against structural control systems,” in Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security, 2021, pp. 1320–1337
+
 Requirements
 =====
 
@@ -31,7 +34,7 @@ We present a video of our simulation results [here](https://youtu.be/vM_n1t92NJg
 
 ## Simulations
 
-There is a folder for the simulation of every benchmark and anomaly detection.
+We include a folder for the simulation of every benchmark and anomaly detection. Each folder has a '''main.m''' file to get the results of each benchmark presented in the paper.
 
 ## Benchmarks
 

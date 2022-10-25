@@ -1,8 +1,8 @@
 The steps to run the simulation are the ones that follow:
 
-1. Modify the relevant parameters in the parameters section on the "B20_MR_DoS_design.m" script. Ecase sets the earthquake to be used, and EI sets the
+1. Modify the relevant parameters in the parameters section on the "main.m" script. Ecase sets the earthquake to be used, and EI sets the
 scaling done to the signal. Change DoS_s from ones(20,1) to zeros(20,1) if only the passive component has to be analyzed.
-2. Run the script "B20_MR_DoS_design.m". Note that it takes a long time due to the amount of simulations and optimizations performed. The plotting
+2. Run the script "main.m". Note that it takes a long time due to the amount of simulations and optimizations performed. The plotting
 functions "DoS_plot.m" and "DoS_comp_plot.m" are called in this script, so there is no need to call them separately.
 3. In case the user wants to see disabled actuators per attack, run the "Attacked_per_selection.m" script. Here, the visualization of the disabled floors
 per attack can be seen, along with a time series of the top floor ISD.

@@ -3,7 +3,7 @@
 % k=1,...,20
 load('optimalAttacks.mat')
 
-S = selecciones(2:21,:);
+S = Selection(2:21,:);
 S=S.*[1:20];
 
 figure('Position',[100 100 900 400])

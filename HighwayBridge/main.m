@@ -11,28 +11,34 @@ load('BridgeMR20LQG.mat')
 System = ss(A, B, C, Db);
 
 % Optimization parameters
-nu = size(B);
-nu = nu(2);
+n_actuators = size(B);
+n_actuators = n_actuators(2);
 nx = length(A);
-li = zeros(1,nu);
-ls = ones(1,nu);
-Ae = [ones(1,nu); -ones(1,nu)];
+li = zeros(1,n_actuators);
+ls = ones(1,n_actuators);
+Ae = [ones(1,n_actuators); -ones(1,n_actuators)];
 Be = 5;
-opts = optimoptions(@ga,'UseParallel', true, 'UseVectorized', false, ...
-                    'MaxGenerations', 15, 'PlotFcn', @gaplotbestf);
-nu=20;
-IntCon = 1:nu;
 
-% GA optimization
-for k=0:nu
-    Be = [k;-k];
-    [Selopt, cost] = ga(@(x)funobjDoS(x,A, B, eye(nx), B*0, E, -Kgain), nu, Ae,Be, [],[], li, ls, [], IntCon );
+n_actuators = 20;
+IntCon = 1:n_actuators;
 
-    costs(k+1) = cost;
-    Selection(k+1,:) = Selopt;
+% Optimize or use the saved data
+OPTIMIZE = 1;
+if OPTIMIZE
+    opts = optimoptions(@ga,'UseParallel', true, 'UseVectorized', false, ...
+                        'MaxGenerations', 20, 'PlotFcn', @gaplotbestf); %Options for optimization
+    % GA optimization
+    for k=0:n_actuators
+        fprintf('Optimization %i\n', k)
+        Be = [k;-k];
+        [Selopt, cost] = ga(@(x)funobjDoS(x,A, B, eye(nx), B*0, E, -Kgain), n_actuators, Ae,Be, [],[], li, ls, [], IntCon, opts );
+    
+        costs(k+1) = cost;
+        Selection(k+1,:) = Selopt;
+    end
+else
+    load('optimalAttacks.mat')    % Alternatively, load costs and Selection used in the paper 
 end
-% load('optimalAttacks.mat')    % Alternatively, load costs and Selection used in the paper 
-
 %% Bridge simulation 
 % Control type
 ctrl_type = 3;  %semi-active
@@ -62,9 +68,10 @@ else
 end
 
 % Controlled structured and 20 attacks
-for i = 1:1  
+for i = 1:n_actuators + 1 
+    fprintf('Simulation %i\n', i)
     % DoS_s vector: 0 to desactivate actuator
-    if i < nu+1
+    if i < n_actuators + 1
         j = i+1;
         DoS_s = Selection(i,:);     % DoS_s = 0: attack off
                                     % DoS_s = 1: attack on
@@ -85,35 +92,35 @@ for i = 1:1
         ground = eq(1,1,inpt).data(:,[2 3]);
     end
     ground = ground*9.81;                              % in m/s^2  
-    MMm=full(Ms);KKm=full(Ks);CCm=full(Cs);KL=full(KL);                   
+    MMm = full(Ms);KKm = full(Ks);CCm = full(Cs);KL = full(KL);                   
     tf = eq(1,1,inpt).Tf;                              % Duration of selected earthquake
     
     % Simulation
     sim(Sim_model,[0 tf],OPTIONS,[])
-    save(['output/Bridge_' ctrl '_' num2str(j) '.mat'],'ye','yc','yf','t_out','dtint')
+    save(['output/Bridge_' ctrl '_' num2str(j - 1) '.mat'],'ye','yc','yf','t_out','dtint')
     
     % Evaluation Criteria 
-    J = eval_india2(ctrl,inpnum,Kdev,j);
-    J3(j) = J(3,end);
+    J = eval_india2(ctrl, inpnum, Kdev, j - 1);
+    J3(j) = J(3, end);
 end
 
 %% Figures
 % H2 norm and mid-span displacement for k=1,..,20
-DoS_plot(20,J3(2:end),costs)
+DoS_plot(20, J3(2:end), costs)
 
 % Histogram of attacked actuators
 DoS_HistogramPlot
 
 % Time-history comparison 
 load('Bridge_DoS_1.mat')
-Disp_test(1,:)=ye(:,10)';
+Disp_test(1, :) = ye(:, 10)';
 load('Bridge_DoS_7.mat')
-Disp_test(2,:)=ye(:,10)';
+Disp_test(2, :) = ye(:, 10)';
 load('Bridge_DoS_rand.mat')
-Disp_test(3,:)=ye(:,10)';
+Disp_test(3, :) = ye(:, 10)';
 t=t_out;
 At_test=zeros(3,20);
 load('optimalAttacks.mat')
-At_test(2,:)=Selection(7,:);
-At_test(3,[3 4 13 14 7 19])=1;
-DoS_comp_plot(At_test,Disp_test,t,6,20)
+At_test(2, :) = Selection(7, :);
+At_test(3, [3 4 13 14 7 19]) = 1;
+DoS_comp_plot(At_test,Disp_test, t, 6, 20)
