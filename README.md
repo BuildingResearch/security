@@ -3,7 +3,8 @@
 This repository contains the files required to simulate the attacks against structural control systems. It also contains Matlab/Simulink files required to run the experiments with the Quanser system. Each folder contains the specific files needed for every testbed and benchmark.
 
 Paper:
-A. Zambrano, A. P. Betancur, L. Burbano, A. F. Ni ̃no, L. F. Giraldo, M. G. Soto, J. Giraldo, and A. A. Cardenas, “You make me tremble: A first look at attacks against structural control systems,” in Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security, 2021, pp. 1320–1337
+
+A. Zambrano, A. P. Betancur, L. Burbano, A. F. Niño, L. F. Giraldo, M. G. Soto, J. Giraldo, and A. A. Cardenas, “You make me tremble: A first look at attacks against structural control systems,” in Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security, 2021, pp. 1320–1337
 
 Requirements
 =====
@@ -49,3 +50,4 @@ We used bechmarks 3, 13 and 14 from [here](https://datacenterhub.org/dataviewer/
 ### 20-story high-rise building MR damper
 ![alt text](https://github.com/BuildingResearch/security/blob/master/benchmark_images/B20MR.PNG)
 
+# Acknowledgement
