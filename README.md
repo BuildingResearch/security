@@ -39,3 +39,13 @@ We include a folder for the simulation of every benchmark and anomaly detection.
 ## Benchmarks
 
 We used bechmarks 3, 13 and 14 from [here](https://datacenterhub.org/dataviewer/view/neesdatabases:db/structural_control_and_monitoring_benchmark_problems/)
+
+### Highway bridge
+![alt text](https://github.com/BuildingResearch/security/blob/master/BridgeMR.PNG)
+
+### 20-story high-rise building with a mass damper
+![alt text](https://github.com/BuildingResearch/security/blob/master/B20MassDamper.PNG)
+
+### 20-story high-rise building MR damper
+![alt text](https://github.com/BuildingResearch/security/blob/master/B20MR.PNG)
+
