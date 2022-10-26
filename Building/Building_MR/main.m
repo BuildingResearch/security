@@ -192,15 +192,17 @@ opts = optimoptions(@ga,'UseParallel', true, 'UseVectorized', false, ...
                     'MaxGenerations', 25, 'PlotFcn', @gaplotbestf); %Options for optimization
 IntCon = 1:n; % Makes the variables take integer values
 for k=1:n % Designs an optimal attack for any number of actuators to be disabled
+    fprintf("Optimization: %i\n", k)
     Be = [k;-k];
-    [Selopt, cost] = ga(@(x)funobjDoS(x,A,E,B,Cz,Dz, K_lqr_un), n, Ae,Be, [],[], li, ls, [], IntCon, opts );
+    [Selopt, cost] = ga(@(x)funobjDoS(x, A, E, B, Cz, Dz, K_lqr_un), n, Ae,Be, [],[], li, ls, [], IntCon, opts );
     h2_norm(k) = -cost;
     selections(k,:) = Selopt;
 end
+delete(gcp('nocreate'))
 %% Genetic algorithm simulation
 % Simulates every attack designed previously
 for k=1:n
-    k
+    fprintf("Simulation %i\n", k)
     Sel_act=selections(k,:);
     aux=diag(1-Sel_act);
     K_lqr=aux*K_lqr_un;

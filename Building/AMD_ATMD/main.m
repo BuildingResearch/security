@@ -1,5 +1,6 @@
 %% Main 
 % This code generates all the plots in the paper
+clear all
 eval('B20_AMD_main')
 eval('B20_ATMD_main')
 %% DoS attack

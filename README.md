@@ -4,7 +4,7 @@ This repository contains the files required to simulate the attacks against stru
 
 Paper:
 
-A. Zambrano, A. P. Betancur, L. Burbano, A. F. Niño, L. F. Giraldo, M. G. Soto, J. Giraldo, and A. A. Cardenas, “You make me tremble: A first look at attacks against structural control systems,” in Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security, 2021, pp. 1320–1337
+A. Zambrano, A. Palacio-Betancur, L. Burbano, A. F. Niño, L. F. Giraldo, M. Gutierrez Soto, J. Giraldo, and A. A. Cardenas, “You make me tremble: A first look at attacks against structural control systems,” in Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security, 2021, pp. 1320–1337
 
 Requirements
 =====

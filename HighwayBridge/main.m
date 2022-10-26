@@ -26,7 +26,7 @@ IntCon = 1:n_actuators;
 OPTIMIZE = 1;
 if OPTIMIZE
     opts = optimoptions(@ga,'UseParallel', true, 'UseVectorized', false, ...
-                        'MaxGenerations', 20, 'PlotFcn', @gaplotbestf); %Options for optimization
+                        'MaxGenerations', 20); %Options for optimization
     % GA optimization
     for k=0:n_actuators
         fprintf('Optimization %i\n', k)
